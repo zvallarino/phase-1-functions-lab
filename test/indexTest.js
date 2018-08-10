@@ -58,7 +58,7 @@ describe('index.js', function() {
     });
 
     it('does not allow rides over 2500 feet', function() {
-      expect(calculatesFarePrice(34, 24)).to.equal('cannot travel that far');
+      expect(calculatesFarePrice(34, 24)).to.equal(-1);
     });
   });
 });

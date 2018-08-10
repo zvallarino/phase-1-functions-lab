@@ -80,7 +80,12 @@ previous test (_hint hint_), return the fare for the customer. The first four
 hundred feet are free. For a distance between 400 and 2000 feet, the price is 2
 cents per foot (not including 400, which are free!). Then Scuber charges a
 flat fare for a distance over 2000 feet and under 2500 feet. Finally, Scuber
-does not allow any rides over 2500 feet - the function returns `'cannot travel
-that far'` if a ride over 2500 feet is requested.
+does not allow any rides over 2500 feet. To communicate that something
+"illegal" has happened, we'll use a technique called the [sentinel value][]:
+basically you return a special "weird" value, to signal that something "not OK"
+happened. In this case, when a ride is requested for more than 2500 feet,
+return `-1`.
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/js-basics-functions-lab'>Functions Lab</a> on Learn.co and start learning to code for free.</p>
+
+[sentinel value]: https://en.wikipedia.org/wiki/Sentinel_value
